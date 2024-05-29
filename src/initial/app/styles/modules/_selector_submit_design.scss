@@ -1,0 +1,55 @@
+//TODO replace variables with corresponding globals
+$submit-design-body-text-colour: #555555;
+$submit-design-title-colour: #555555;
+$submit-design-body-title-colour: $motocalBlue;
+$submit-design-body-title-colour-mobile: $ApriliaOrange;
+$submit-design-body-title-colour-desktop: $motocalBlue;
+$submit-design-button-colour: blue;
+$submit-design-body-form-colour: #777777;
+$submit-design-coming-soon-title-colour-mobile: $ApriliaOrange;
+$submit-design-coming-soon-title-colour-desktop: $motocalRed;
+
+$submit-design-coming-soon-sub-title-colour-mobile: $submit-design-body-text-colour;
+$submit-design-coming-soon-sub-title-colour-desktop: $motocalBlue;
+
+$submit-design-border-colour: #e5e5e5;
+
+.selector-submit-design-modal {
+    .submit-design-header {
+        @extend .modal-header;
+        text-align: center;
+        .submit-design-title {
+            text-transform: none;
+            color: $submit-design-title-colour;
+            margin: 0;
+        }
+        button.close {
+            position: absolute;
+            right: 16px;
+        }
+    }
+
+    .submit-design-body {
+        padding: 20px;
+        .submit-design-form {
+            padding: 20px 0;
+            .submit-design-form-group {
+                padding: 10px 20%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                input {
+                    width: 70%;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+
+    .submit-design-footer {
+        @extend .modal-footer;
+        position: relative;
+        padding: 10px;
+        border: none;
+    }
+}

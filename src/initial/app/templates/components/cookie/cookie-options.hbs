@@ -1,0 +1,53 @@
+{{yield}}
+<div class="modal fade cookie-options" tabindex="-1" role="dialog" aria-labelledby="cookie-options" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" {{action 'closeBox'}} class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 class="modal-title" style="text-align: center;">Cookie Consent Options</h3>
+      </div>
+
+      <div class="modal-body">
+          <div style="padding: 10px;">
+            {{{cookieContent}}}
+              {{#if hasCookiesPolicy}}
+                  <div class="cookiescript_description">
+                      <a href="" {{action 'showCookiesPolicy'}}>Cookies Policy</a>
+                  </div>
+              {{/if}}
+          </div>
+        {{#each options as |option|}}
+          <div style="padding: 10px">
+            <div class="flex-align" style="padding-bottom: 10px;">
+              <h4 style="font-weight: bold;text-transform: none;">{{option.title}}</h4>
+              <div class="flex-align">
+                {{#if option.showDescription}}
+                  <div {{action 'toggleDescription' option}} class="flex-align" style="font-size: 12px;margin-right: 20px;cursor: pointer;">
+                    <span style="margin-right: 5px;">Hide description</span> <i class="arrow up"></i>
+                  </div>
+                {{else}}
+                  <div {{action 'toggleDescription' option}} class="flex-align" style="font-size: 12px;margin-right: 20px;cursor: pointer;">
+                    <span style="margin-right: 5px;">Show description</span> <i class="arrow down"></i>
+                  </div>
+                {{/if}}
+                <label class="switch">
+                  <input id="{{option.id}}_option" type="checkbox" checked={{option.checked}} disabled={{option.disabled}}>
+                  <span class="slider round" style="cursor: {{if option.disabled 'not-allowed' 'pointer'}}"></span>
+                </label>
+              </div>
+            </div>
+            {{#if option.showDescription}}
+              <p>{{option.description}}</p>
+            {{/if}}
+          </div>
+        {{/each}}
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" {{action 'accept'}} class="btn btn-primary" data-dismiss="modal">Accept and Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>

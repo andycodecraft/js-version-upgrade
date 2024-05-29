@@ -1,0 +1,24 @@
+<script type="text/javascript">
+    document.addEventListener('rsReady', function(e) {
+        var init = function(config){
+            if (config.mixpanel.enabled && !config.mixpanel.initialized) {
+                mixpanel.init(config.mixpanel.token);
+                mixpanel.identify(config.APP.session_id);
+                config.mixpanel.initialized = true;
+            }
+            if (config.google_analytics.enabled && !config.google_analytics.initialized) {
+                ga('create', config.google_analytics.tracking_id, 'auto');
+                ga('send', 'pageview');
+                ga('require', 'ecommerce');
+                config.google_analytics.initialized = true;
+            }
+        };
+
+        init(e.detail);
+
+        document.addEventListener('cookie-consent-update', function(e){
+            init(e.detail);
+        }, false);
+
+    }, false);
+</script>

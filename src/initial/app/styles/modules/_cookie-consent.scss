@@ -1,0 +1,386 @@
+#cookiescript_injected {
+    background-color: #2d2d2d;
+    z-index: 99999;
+    opacity: 1;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: 'Open Sans', Arial, 'Trebuchet MS', 'Segoe UI', 'Helvetica', sans-serif;
+    box-shadow: 1px 2px 8px 0 rgba(0, 0, 0, 0.35);
+    color: #FFFFFF;
+    box-sizing: border-box;
+    bottom: 0;
+    left: 32px;
+    position: fixed;
+    padding: 15px 20px 15px 20px;
+    width: 300px;
+    text-align: left;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#cookiescript_close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 29px;
+    line-height: 13px;
+    cursor: pointer;
+    color: #FFFFFF;
+    height: 15px;
+    width: 15px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    letter-spacing: 0;
+    font-family: 'Trebuchet MS', 'Arial', sans-serif;
+    font-weight: 100;
+    opacity: 0.85;
+    z-index: 99999;
+}
+
+.cookiescript_header {
+    background-color: transparent;
+    z-index: 99999;
+    color: #FFFFFF;
+    font-size: 17px;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    font-family: 'Open Sans', Arial, 'Trebuchet MS', 'Segoe UI', 'Helvetica', sans-serif;
+    opacity: 1;
+}
+
+#cookiescript_save {
+    border: 0;
+    transition: all 0.25s ease 0s;
+    background-color: #6BBE6B;
+    color: #FFFFFF;
+    font-size: 11px;
+    text-align: center;
+    line-height: 3.3;
+    letter-spacing: 0.4px;
+}
+
+#cookiescript_reject {
+    border: 1px solid #FFFFFF;
+    text-align: center;
+    line-height: 3;
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    color: #FFFFFF;
+    background: #2d2d2d;
+}
+
+#cookiescript_reject,
+#cookiescript_save {
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition-duration: 100ms;
+    transition-timing-function: ease-in-out;
+    min-width: 103px;
+}
+
+#cookiescript_readmore {
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    margin: 0;
+    transition: all 100ms ease 0s;
+    background-color: transparent;
+    color: #FFFFFF;
+    display: inline;
+}
+
+.cookiescript_description {
+    color: #FFFFFF;
+    font-size: 11px;
+    letter-spacing: 0.3px;
+    line-height: 1.8;
+    font-weight: 400;
+    opacity: 0.85;
+}
+
+#cookiescript_close:hover{
+    opacity: 1;
+}
+
+#cookiescript_reject:hover {
+    background-color: #242424;
+}
+
+#cookiescript_save:hover {
+    background-color: #569856;
+}
+
+#cookiescript_readmore:hover {
+    color: #6BBE6B;
+}
+
+@media print {
+    #cookiescript_injected {
+        display: none;
+    }
+}
+
+#cookiescript_copyright {
+    line-height: 1;
+    text-align: center;
+}
+
+#cookiescript_buttons {
+    display: flex;
+    flex-direction: row;
+    font-weight: 700;
+    justify-content: space-between;
+    margin: 0 -5px 0 -5px;
+    flex-wrap: nowrap;
+}
+
+.cookiescript_header {
+    padding: 14px 0 12px;
+    text-align: left;
+    margin: 0;
+}
+
+#cookiescript_save,
+#cookiescript_reject {
+    flex-grow: 1;
+    padding: 0 7px;
+    margin: 0 5px 10px 5px;
+}
+
+.cookiescript_description {
+    margin: 0 0 12px;
+}
+
+@media only screen and (max-width: 414px) {
+    #cookiescript_injected {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px;
+        border-radius: 0;
+    }
+
+    .cookiescript_description,
+    #cookiescript_buttons,
+    #cookiescript_manage_wrap,
+    #cookiescript_checkboxs {
+        margin-bottom: 8px;
+    }
+
+    .cookiescript_header {
+        padding-top: 5px;
+    }
+
+    #cookiescript_checkboxs {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+#cookiescript_reject,
+#cookiescript_save {
+    border-radius: 20px;
+}
+
+#cookiescript_badge {
+    position: fixed;
+    line-height: 0;
+    cursor: pointer;
+    z-index: 99999;
+    font-size: 0;
+    color: #999;
+    bottom: 0;
+    left: 227px;
+    background: #2d2d2d;
+    border-radius: 25px;
+    padding: 3px;
+    display: flex;
+    flex-direction: row;
+    transition-duration: 500ms;
+    box-shadow: 1px 2px 8px 0 rgba(0, 0, 0, 0.2);
+    opacity: 1;
+}
+  
+#cookiescript_badge:hover #cookiescript_badgetext {
+    max-width: 300px;
+    padding-right: 15px;
+    padding-left: 12px;
+}
+  
+#cookiescript_badgetext {
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 2.5;
+    font-weight: 600;
+    font-family: 'Open Sans', Arial, 'Trebuchet MS', 'Segoe UI', 'Helvetica', sans-serif;
+    overflow: hidden;
+    transition-duration: 500ms;
+    white-space: nowrap;
+    padding-right: 0;
+    max-width: 0;
+    color: #FFFFFF;
+}
+
+#cookiescript_badgeimage {
+    width: 40px;
+    height: 40px;
+}
+  
+#cookiescript_badgesvg {
+    width: 40px;
+    height: 40px;
+}
+  
+@media only screen and (max-width: 414px) {
+    #cookiescript_badgeimage {
+      width: 30px;
+      height: 30px;
+    }
+  
+    #cookiescript_badgesvg {
+      width: 30px;
+      height: 30px;
+    }
+  
+    #cookiescript_badgetext {
+      display: none;
+    }
+}
+
+.cookie-options {
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 99999;
+    .modal-dialog {
+        .modal-body{
+            .cookiescript_header {
+                display: none;
+            }
+            .cookiescript_description {
+                color: #333;
+                font-size: 14px;
+                opacity:  1;
+                a {
+                    color: #1b4383;
+                }
+            }
+        }
+
+        .flex-align {
+            display: flex;
+            align-items: center;
+            justify-content:space-between;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+        
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 31px;
+            margin: 0;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 23px;
+            width: 23px;
+            left: 6px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: #2196F3;
+        }
+
+        input:focus+.slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked+.slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 1px 1px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+            margin-bottom: -4px;
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            margin-bottom: 2px;
+        }
+    }
+}
+
+@media (min-width: 768px){
+    .cookie-options .modal-dialog {
+        width: 700px;
+    }
+}
+
+.terms-privacy {
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 99999;
+    .modal-body {
+        max-height: 400px;
+        overflow-y: scroll;
+        font: 12px Arial;
+        ol {
+            padding-left: .5em;
+            list-style-type: none;
+            color: #414042;
+            font-family: Arial, sans-serif;
+            li.li3 {
+                margin: 0 0 12px;
+                text-align: justify;
+                font: 11px Arial;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{{yield}}
+
+{{#if show}}
+    <div id="floating-menu">
+        {{#if open}}
+            {{#if hasZendesk}}
+                <span class="f-button" {{action 'showZendeskHelp'}}>Help</span>
+            {{/if}}
+            {{#if hasZopim}}
+                <span class="f-button" {{action 'showZopimChatWindow'}}>Chat</span>
+            {{/if}}
+            {{#if hasCookies}}
+                <span class="f-button" {{action 'showCookieOptions'}}>Cookies</span>
+            {{/if}}
+            {{#if hasPrivacyPolicy}}
+                <span class="f-button" {{action 'showTermsPrivacyPop' 'Privacy'}}>Privacy</span>
+            {{/if}}
+            {{#if hasTOS}}
+                <span class="f-button" {{action 'showTermsPrivacyPop' 'Terms of service'}}>Terms</span>
+            {{/if}}
+            <span class="f-button" {{action 'close'}}>&lt;</span>
+        {{else}}
+            <span class="f-button" {{action 'open'}}>&gt;</span>
+        {{/if}}
+    </div>
+{{/if}}

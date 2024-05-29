@@ -1,0 +1,73 @@
+{{#rs-modal modalOpen=modalOpen modalClass='selector-submit-design-modal'}}
+    <div class="submit-design-header" {{action 'noop' bubbles=false}}>
+        <button type="button" class="close" {{action 'closeModal'}}>
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h2 class="submit-design-title">
+            {{#if hasError}}
+                {{t 'submit_design.error.title'}}
+            {{else if hasSubmitted}}
+                {{t 'submit_design.success.title'}}
+            {{else}}
+                {{t 'submit_design.title'}}
+            {{/if}}
+        </h2>
+    </div>
+    <div class="submit-design-body" style="text-align: center;" {{action 'noop' bubbles=false}}>
+        <div class="image-wrapper">
+            <img class="submit-design-image" style="width: 50%;" src="{{design_image_url}}">
+        </div>
+        {{#if hasError}}
+            <div class="submit-design-error">
+                <div class="submit-design-text">
+                    <p>{{t 'submit_design.error.body_1'}}</p>
+                    <p>{{t 'submit_design.error.body_2'}}</p>
+                </div>
+            </div>
+        {{else if hasSubmitted}}
+            <div {{bind-attr class=':submit-design-success becomeDesigner:designer'}}>
+                <div class="submit-design-text">
+                    <p>{{t 'submit_design.success.body'}}</p>
+                </div>
+            </div>
+        {{else}}
+            <form class="submit-design-form">
+                <div class="submit-design-form-group">
+                    <label for="dealerCode">Dealer Code</label>
+                    {{validated-input-text
+                        type='text'
+                        value=dealerCode
+                        id='dealerCode'
+                        placeholder='Dealer Code'
+                        isValid=isDealerCodeValid
+                        valid=dealerCodeValid
+                        class='form-control'
+                        checkImmediate=true
+                    }}
+                </div>
+                <div class="submit-design-form-group">
+                    <label for="customerName">Customer Name</label>
+                    {{validated-input-text
+                        type='text'
+                        value=customerName
+                        id='customerName'
+                        placeholder='Customer Name'
+                        isValid=isCustomerNameValid
+                        valid=customerNameValid
+                        class='form-control'
+                        checkImmediate=true
+                    }}
+                </div>
+            </form>
+        {{/if}}
+    </div>
+    <div class="submit-design-footer" {{action 'noop' bubbles=false}}>
+        {{#if hasError}}
+            <button type="submit" {{action 'closeModal'}} class="btn btn-lg btn-primary">OK</button>
+        {{else if hasSubmitted}}
+            <button type="submit" {{action 'closeModal'}} class="btn btn-lg btn-primary">OK</button>
+        {{else}}
+            <button type="submit" {{action 'submit'}} {{bind-attr class=':btn :btn-lg :btn-primary validForm::disabled'}}>Submit</button>
+        {{/if}}
+    </div>
+{{/rs-modal}}

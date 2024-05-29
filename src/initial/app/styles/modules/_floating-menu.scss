@@ -1,0 +1,29 @@
+body > .zopim[data-test-id=ChatWidgetButton],
+body > .zopim[data-test-id=ChatWidgetMobileButton] {
+  display: none!important;
+}
+
+#floating-menu {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  z-index: 10000;
+  bottom: 0;
+  left: 15px;
+
+  span.f-button {
+    font-size: 12px;
+    display: block;
+    font-weight: bold;
+    background: #2d2d2d;
+    color: #FFF;
+    padding: 0.8rem 1rem 0.5rem 1rem;
+    border-radius: 8px 8px 2px 2px;
+    margin-right: 8px;
+    cursor: pointer;
+
+    &:hover {
+      background: #242424;
+    }
+  }
+}

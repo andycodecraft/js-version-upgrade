@@ -1,0 +1,16 @@
+{{yield}}
+{{#if showCookiePopup}}
+    <div id="cookiescript_injected">
+        {{{content}}}
+        {{#if hasCookiesPolicy}}
+            <div class="cookiescript_description">
+                <a href="" {{action 'showCookiesPolicy'}}>Cookies Policy</a>
+            </div>
+        {{/if}}
+        <div id="cookiescript_buttons">
+            <div id="cookiescript_reject" {{action 'showOptions'}}>Options</div>
+            <div id="cookiescript_save" {{action 'setCookie'}}>I'm OK with that</div>
+        </div>
+        <div id="cookiescript_close" {{action 'setCookie'}}>×</div>
+    </div>
+{{/if}}
